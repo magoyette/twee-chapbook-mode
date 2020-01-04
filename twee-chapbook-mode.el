@@ -82,8 +82,7 @@
     ;; Forks
     "config.style.page.fork.divider.style"
     "config.style.page.fork.divider.size"
-    "config.style.page.fork.divider.color"
-))
+    "config.style.page.fork.divider.color"))
 
 (defun twee-chapbook-mode--completion-at-point ()
   "Completion function for Twee files for the Chapbook story format."
@@ -102,14 +101,14 @@
   :group 'faces)
 
 (defconst twee-chapbook-mode--variable-init-regex
-  "^\\([$_A-Za-z][$_A-Za-z0-9.]*\\)\\(?::\\|\s(.*?):\\)\s")
+  "^\\([$_A-Za-z][$_A-Za-z0-9.]*?\\):\\(?:\\|\s(.*?):\\)\s")
 
 (defconst twee-chapbook-mode--parameter-name-regex
-  "\s+\\([$_A-Za-z][$_A-Za-z0-9.]*\\):\s")
+  "\s+\\([$_A-Za-z][$_A-Za-z0-9.]*?\\):\s")
 
 (defun twee-chapbook-mode--build-string-regex (delimiter)
   "Build a regex that match a string for the provided DELIMITER."
-  (format "\\(%s\\(?:[^%s\\]+\\|\\\\\\(?:.\\|\\)\\)*%s\\)"
+  (format "\\(%s\\(?:[^%s\\]+?\\|\\\\\\(?:.\\|\\)\\)*?%s\\)"
           delimiter delimiter delimiter))
 
 (defun twee-chapbook-mode--build-string-value-regex (delimiter)
@@ -130,7 +129,7 @@
           (twee-chapbook-mode--build-string-regex delimiter)))
 
 (defun twee-chapbook-mode--build-additional-parameter-name-regex ()
-  "Build a regex for a string value"
+  "Build a regex for a string value."
   (format ",%s"
           twee-chapbook-mode--parameter-name-regex))
 
@@ -228,8 +227,7 @@
      (2 font-lock-string-face t))
     (,(twee-chapbook-mode--build-string-value-regex "'")
      (1 font-lock-variable-name-face t)
-     (2 font-lock-string-face t))
-    ))
+     (2 font-lock-string-face t))))
 
 (defalias 'twee-chapbook-parent-mode
   (if (fboundp 'prog-mode) 'prog-mode 'fundamental-mode))
