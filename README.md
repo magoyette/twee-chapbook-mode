@@ -4,6 +4,8 @@ A major mode for Twee/Twine files written in the [Chapbook](https://klembot.gith
 
 `twee-chapbook-mode` should be combined with `twee-mode` for complete support of Chapbook files.
 
+This project is now archived and no longer maintained.
+
 ## twee-mode features
 
 - Display a menu to navigate to a passage header with Imenu
